@@ -1,0 +1,36 @@
+.seat-form hr{
+    margin-top: 1rem;
+}
+
+.td {
+    padding: .5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    width: 80%;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    color: rgb(110, 110, 110);
+}
+
+.row-identification{
+    display: grid;
+    justify-content: center;
+    height: 80%;
+}
+
+.row-identification p{
+    padding-top: 1.5rem;
+}
+
+.numtd {
+    padding-left: 3.2rem;
+}
+
+.screen{
+    margin-top: 2rem;
+    border-top: white solid 2px;
+    text-align: center;
+}

@@ -1,0 +1,15 @@
+.close-button{
+    background: transparent;
+    border: none;
+    width: 5rem;
+    filter: invert(98%) sepia(99%) saturate(120%) hue-rotate(210deg) brightness(116%) contrast(100%);
+}
+.close-img{
+    width: 90%;
+    margin-bottom: -2rem;
+    margin-top: -2rem;
+}
+
+.close-button:hover{
+    filter: invert(15%) sepia(74%) saturate(7092%) hue-rotate(358deg) brightness(106%) contrast(91%);
+}

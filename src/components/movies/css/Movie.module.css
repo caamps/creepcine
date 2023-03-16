@@ -1,0 +1,44 @@
+.movie {
+    background-color: #181818;
+    height: 8rem;
+    border-radius: 25px;
+    display: flex;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.left-div{
+    display: flex;
+}
+
+.right-div{
+    padding: 1rem;
+    text-align: end;
+}
+
+.movie img{
+    width: 5.5rem;
+    margin-right: 1rem;
+}
+
+.movie-text{
+    display: grid;
+}
+
+.movie:hover{
+    animation: bump 250ms forwards;
+    cursor: pointer;
+}
+
+@keyframes bump {
+    25% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.04)
+    }
+    100% {
+        transform: scale(1.06)
+    }
+  }
