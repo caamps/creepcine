@@ -2,16 +2,18 @@ import { useContext, useReducer, useState } from 'react';
 import MovieCtx from '../../store/context';
 import classes from './css/SeatsForm.module.css';
 import Seat from './Seat';
+import TicketType from './TicketType';
 
 const setSelectedSeats = (state, action) => {
     if (action.checked) {
-        return ([...state, action.id])
+        return ({list: [...state.list, action.id], last_action: 'SELECTED'})
     }
     else {
-        let newList = state;
-        const unselectedSeatId = newList.findIndex(id => id === action.id);
+        const unselectedSeatId = state.list.findIndex(id => id === action.id);
+        let newList = state.list;
         newList.splice(unselectedSeatId, 1);
-        return (newList)
+        newList = newList.map(item => item);
+        return ({list: newList, last_action: 'UNSELECTED'})
     }
 }
 
@@ -25,7 +27,7 @@ const SeatsForm = props => {
         numberRows = [...numberRows, <td className={classes.numtd}>{i}</td>]
     }
 
-    const [selectedSeats, dispatchSeats] = useReducer(setSelectedSeats, []);
+    const [selectedSeats, dispatchSeats] = useReducer(setSelectedSeats, {list: [], last_action: 'CREATED'});
     const movieCtx = useContext(MovieCtx);
 
     const selectHandler = input => {
@@ -35,9 +37,10 @@ const SeatsForm = props => {
     const submitHandler = (event) => {
         event.preventDefault();
         const movieCtxIndex = movieCtx.findIndex(movie => movie.id === props.movieId);
-        movieCtx[movieCtxIndex].onSeatsBooked(selectedSeats);
+        movieCtx[movieCtxIndex].onSeatsBooked(selectedSeats.list);
         props.onCloseModal();
     }
+
 
     return (
         <>
@@ -64,8 +67,8 @@ const SeatsForm = props => {
                 </table>
                 <div className={classes.screen}>
                     <span>TELA</span>
-                </div>
-                <button type='submit'>Submit</button>
+                </div>  
+                <TicketType selectedSeats={selectedSeats}/>
             </form> 
         </div>
     </>)
