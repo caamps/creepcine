@@ -51,7 +51,7 @@ const SeatsForm = props => {
             <form onSubmit={submitHandler} className={classes['seat-form']}>
                 <table>
                     <tbody>
-                <tr>
+                <tr>    
                     {thirdRow.map(id => <td className={classes.td}><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
                 </tr>
                 <tr>

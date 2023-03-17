@@ -1,0 +1,23 @@
+.input-div {
+    display: flex;
+}
+
+.big-div{
+    height: 10rem;
+}
+
+.submit {
+    border: white solid 1px;
+    background-color: transparent;
+    color: white;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 120%;
+    margin-left: 10rem;
+}
+
+.submit:hover{
+     background-color: white;
+     color: black;
+     cursor: pointer;
+}

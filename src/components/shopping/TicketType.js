@@ -1,32 +1,8 @@
-import {  useEffect, useReducer, useRef } from 'react';
+import {  useEffect, useReducer } from 'react';
 import classes from './css/TicketType.module.css';
+import Input from '../UI/TicketTypeInput';
 
 
-const Input = props => {
-    const inputRef = useRef();
-
-    const subtractHandler = () => {
-        if (props.value === 0){
-            return
-        }
-        props.onChange({action: 'DECREASE', type:`${props.id}`})
-    }
-
-    const addHandler = () => {
-        if (props.value === props.amount){
-            return
-        }
-        props.onChange({action: 'INCREASE', type:`${props.id}`})
-    }
-
-    return (
-        <div>
-            <button onClick={subtractHandler} type='button'>-</button>
-            <span>{props.value}</span>
-            <button onClick={addHandler} type='button'>+</button>
-        </div>
-    )
-}
 
 const setTickets = (state, action) => {
         switch (action.action) {
@@ -64,7 +40,7 @@ const setTickets = (state, action) => {
 const TicketType = props => {
     const selectedSeatsList = props.selectedSeats.list;
     const [ticketTypes, dispatchTicket] = useReducer(setTickets, {normal: 0, half: 0, total: 0})
-
+    const totalPrice = (ticketTypes.normal * 10) + (ticketTypes.half * 5);
     useEffect(() => {
         const last_action = props.selectedSeats.last_action;
         if (last_action === 'SELECTED') {
@@ -75,16 +51,24 @@ const TicketType = props => {
         } 
     }, [selectedSeatsList])
 
-    return(
-        <>
-        <p>Assentos selecionados: {selectedSeatsList.map((seat, i) => i === selectedSeatsList.length - 1?
+    let content = <>
+     <p>Assentos selecionados: {selectedSeatsList.map((seat, i) => i === selectedSeatsList.length - 1?
          `${seat}`: `${seat}, `)}</p>
-
+         <p>Preço total: R${totalPrice.toFixed(2)}</p>
+         <div className={classes['input-div']}>
             <Input id='normal' value={ticketTypes.normal} amount={ticketTypes.total} onChange={dispatchTicket}/>
             <Input id='half' value={ticketTypes.half} amount={ticketTypes.total} onChange={dispatchTicket}/>
+            <button type='submit' className={classes.submit}>Comprar</button>
+        </div></>
 
-        <button type='submit'>aaa</button>
-        </>
+    if (selectedSeatsList.length === 0) {   
+        content = '';
+    }
+
+    return(
+        <div className={classes['big-div']}>
+            {content}
+        </div>
     )
 }
 
