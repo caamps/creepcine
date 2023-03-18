@@ -12,4 +12,5 @@
 
 .close-button:hover{
     filter: invert(15%) sepia(74%) saturate(7092%) hue-rotate(358deg) brightness(106%) contrast(91%);
+    cursor: pointer;
 }

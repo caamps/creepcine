@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Modal from '../UI/Modal';
 import classes from './css/Movie.module.css';
 import MovieShopping from '../shopping/MovieShopping';
@@ -25,6 +25,11 @@ const Movie = props => {
     const closeModal = () => {
         setIsOnShopping(false);
     }
+    let rightDivClasses = classes['right-div'];
+    if (is_soldoff){
+        rightDivClasses = `${classes['right-div']} ${classes.soldoff}`
+    }
+
 
     return (
         <>
@@ -36,7 +41,7 @@ const Movie = props => {
                 <p>{movie.time}</p>
             </div>
             </div>
-            <div className={classes['right-div']}>
+            <div className={rightDivClasses}>
                 {isAvailableP}
                 <small>{movie.hour}</small>
             </div>

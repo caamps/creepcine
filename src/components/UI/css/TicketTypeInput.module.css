@@ -1,16 +1,5 @@
 .add-subtract-btn{
-    border: white solid 1px;
-    background-color: transparent;
-    color: white;
     width: 3rem;
-    height: 3rem;
-    border-radius: 10px;
-    font-size: 120%;
-}
-
-.add-subtract-btn:hover{
-    background-color: white;
-    color: black;
 }
 
 .description-div{
@@ -26,4 +15,10 @@
 .btns-div span{
     padding: 1rem;
     color: white;
+}
+
+@media (max-width: 768px){
+    .btns-div{
+        display: flex;
+    }
 }

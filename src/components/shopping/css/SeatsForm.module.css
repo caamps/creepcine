@@ -1,19 +1,3 @@
-.seat-form hr{
-    margin-top: 1rem;
-}
-
-.td {
-    padding: .5rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 9fr;
-    width: 80%;
-    margin-top: 2rem;
-    margin-left: 1.5rem;
-    color: rgb(110, 110, 110);
-}
 
 .row-identification{
     display: grid;
@@ -21,16 +5,61 @@
     height: 80%;
 }
 
-.row-identification p{
-    padding-top: 1.5rem;
-}
 
 .numtd {
     padding-left: 3.2rem;
 }
 
 .screen{
-    margin-top: 2rem;
-    border-top: white solid 2px;
+    border-top: gray solid 2px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 1rem;
+    color: gray;
+}
+
+.grid td {
+    padding: .5rem;
     text-align: center;
 }
+
+.grid table{
+    margin-top: 2rem;
+    width: 80%;
+    margin-left: 8%;
+    color: gray;
+}
+
+.submit{
+    position: absolute;
+    height: 3rem;
+    right: 10%;
+    margin-top: 6rem;
+}
+
+@media (max-width: 1000px) {
+    .grid table {
+      width: 90%;
+      margin: auto;
+      margin-top: 2rem;
+    }
+    .submit {
+        position: inherit;
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .seat-form{
+        display: grid;
+    }
+  }
+  @media (max-width: 1150px) {
+    .grid table{
+        width: 90%;
+    }
+  }

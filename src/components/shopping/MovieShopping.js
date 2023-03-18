@@ -25,7 +25,7 @@ const MovieShopping = props => {
                     <h3>Horário: {movie.hour}</h3>
                     <h3>{props.available}</h3>
                 </div>
-                <div>
+                <div className={classes['right-div']}>
                     <SeatsForm movieId={movie.id} onCloseModal={closeModalHandler}/>
                 </div>
             </div>

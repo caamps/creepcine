@@ -58,7 +58,6 @@ const TicketType = props => {
          <div className={classes['input-div']}>
             <Input id='normal' value={ticketTypes.normal} amount={ticketTypes.total} onChange={dispatchTicket}/>
             <Input id='half' value={ticketTypes.half} amount={ticketTypes.total} onChange={dispatchTicket}/>
-            <button type='submit' className={classes.submit}>Comprar</button>
         </div></>
 
     if (selectedSeatsList.length === 0) {   

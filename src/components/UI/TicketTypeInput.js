@@ -1,3 +1,4 @@
+import ButtonWhiteHover from './ButtonWhiteHover';
 import classes from './css/TicketTypeInput.module.css';
 
 const Input = props => {
@@ -24,9 +25,9 @@ const Input = props => {
     return (
         <div className={classes['big-div']}>
             <div className={classes['btns-div']}>
-                <button onClick={subtractHandler} type='button' className={classes['add-subtract-btn']}>-</button>
+                <ButtonWhiteHover onClick={subtractHandler} type='button' className={classes['add-subtract-btn']}>-</ButtonWhiteHover>
                 <span>{props.value}</span>
-                <button onClick={addHandler} type='button' className={classes['add-subtract-btn']}>+</button>
+                <ButtonWhiteHover onClick={addHandler} type='button' className={classes['add-subtract-btn']}>+</ButtonWhiteHover>
             </div>
             <div className={classes['description-div']}>
                 <p>{id}</p>

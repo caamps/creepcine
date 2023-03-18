@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
     height: 60vh;
+    margin-bottom: 1rem;
 }
 
 
@@ -26,4 +27,24 @@
 .header {
     display: flex;
     justify-content: end;
+}
+
+@media (max-width: 800px) {
+    .grid{
+        display: table-row;
+    }
+    .poster {
+        width: 7rem;
+        position: absolute;
+        left: 10%;
+    }
+    .left-div {
+        border-right: none;
+        border-bottom: white solid 1px;
+        padding-left: 40%;
+    }
+    .left-div h4, h3, small{
+        margin: auto;
+    }
+
 }

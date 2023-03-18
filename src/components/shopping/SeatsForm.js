@@ -3,6 +3,7 @@ import MovieCtx from '../../store/context';
 import classes from './css/SeatsForm.module.css';
 import Seat from './Seat';
 import TicketType from './TicketType';
+import ButtonWhiteHover from '../UI/ButtonWhiteHover';
 
 const setSelectedSeats = (state, action) => {
     if (action.checked) {
@@ -24,7 +25,7 @@ const SeatsForm = props => {
     const thirdRow = ['c1', 'c2', 'c3', 'c4', 'c5'];
     let numberRows = [];
     for(let i = 1; i <= 5; i++){
-        numberRows = [...numberRows, <td className={classes.numtd}>{i}</td>]
+        numberRows = [...numberRows, <td className={classes.numtd} key={i}>{i}</td>]
     }
 
     const [selectedSeats, dispatchSeats] = useReducer(setSelectedSeats, {list: [], last_action: 'CREATED'});
@@ -45,22 +46,23 @@ const SeatsForm = props => {
     return (
         <>
         <div className={classes.grid}>
-            <div className={classes['row-identification']}>
-                <p>C</p> <p>B</p> <p>A</p>
-            </div>
             <form onSubmit={submitHandler} className={classes['seat-form']}>
                 <table>
                     <tbody>
                 <tr>    
-                    {thirdRow.map(id => <td className={classes.td}><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
+                    <td>C</td>
+                    {thirdRow.map(id => <td><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
                 </tr>
                 <tr>
-                    {secondRow.map(id => <td className={classes.td}><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
+                    <td>B</td>
+                    {secondRow.map(id => <td><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
                 </tr>
                 <tr>
-                    {firstRow.map(id => <td className={classes.td}><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
+                    <td>A</td>
+                    {firstRow.map(id => <td><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
                 </tr>
                 <tr>
+                    <td></td>
                     {numberRows}
                 </tr>
                 </tbody>
@@ -68,8 +70,9 @@ const SeatsForm = props => {
                 <div className={classes.screen}>
                     <span>TELA</span>
                 </div>  
-                <TicketType selectedSeats={selectedSeats}/>
+                {selectedSeats.list.length > 0 && <ButtonWhiteHover type='submit' className={classes.submit}>Comprar</ButtonWhiteHover>}
             </form> 
+            <TicketType selectedSeats={selectedSeats}/>
         </div>
     </>)
 }

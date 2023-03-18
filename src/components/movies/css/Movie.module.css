@@ -42,3 +42,24 @@
         transform: scale(1.06)
     }
   }
+
+  @media (max-width: 768px) {
+    .movie h2{
+        font-size: 1rem;
+    }
+    .right-div{
+        background-color: green;
+        width: 5%;
+    }
+    .right-div p {
+        display: none;
+    }
+    .right-div.soldoff {
+        background-color: red;
+    }
+    .right-div small{
+        position: absolute;
+        margin-top: 5rem;
+        right: 20%;
+    }
+  }

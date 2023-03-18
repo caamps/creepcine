@@ -19,6 +19,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
+    overflow: hidden;
 }
 
 @keyframes slide-down {
@@ -29,5 +30,17 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 800px) {
+    .modal-overlay{
+        top: 2vh;
+        width: 90%;
+        left: 5%;
+        height: 93vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 2rem 1rem;
     }
 }
