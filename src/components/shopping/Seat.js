@@ -1,4 +1,4 @@
-import { useContext, useEffect, useReducer, useRef, useState } from 'react';
+import { useContext, useReducer, useRef } from 'react';
 import MovieCtx from '../../store/context';
 import classes from './css/Seat.module.css';
 import seat_available from '../../assets/seat_available.svg';
@@ -48,7 +48,7 @@ const Seat = props => {
 
     return (
         <>
-            <label htmlFor={props.id} className={classes.checkbox}><img src={seatImg}/></label>
+            <label htmlFor={props.id} className={classes.checkbox}><img src={seatImg} alt='seat checkbox'/></label>
             <input type='checkbox' id={props.id} ref={inputRef} disabled={isTaken} 
             onChange={checkHandler} style={{display: 'none'}}/>
         </>

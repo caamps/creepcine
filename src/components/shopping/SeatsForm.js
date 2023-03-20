@@ -1,4 +1,4 @@
-import { useContext, useReducer, useState } from 'react';
+import { useContext, useReducer } from 'react';
 import MovieCtx from '../../store/context';
 import classes from './css/SeatsForm.module.css';
 import Seat from './Seat';

@@ -1,7 +1,6 @@
 import classes from './css/BookedTickets.module.css';
 import { todayMovies } from '../movies/MoviesList';
 import CloseButton from '../UI/CloseButton';
-import Modal from '../UI/Modal';
 
 const BookedTickets = props => {
     const movie = todayMovies.find(movie => movie.id === props.movieId)

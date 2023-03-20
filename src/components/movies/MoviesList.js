@@ -4,7 +4,6 @@ import days500 from '../../assets/500days.jpg';
 import zumbilandia from '../../assets/zumbilandia.jpg';
 import clube from '../../assets/clube.jpg';
 import efeito from '../../assets/efeito_borboleta.jpg';
-import Modal from '../UI/Modal';
 
 
 export const todayMovies = [{id: 'm1', name: 'Zumbilândia', year: '2009', time: '1h28min', hour:'16:00', image: zumbilandia},

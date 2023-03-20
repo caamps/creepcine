@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
-import Modal from '../UI/Modal';
+import { useContext, useState } from 'react';
 import classes from './css/Movie.module.css';
 import MovieShopping from '../shopping/MovieShopping';
 import MovieCtx from '../../store/context';
 
 const Movie = props => {
     const movie = props.movie;
-    const [isAvailable, setAvailable] = useState(true);
     const [isOnShopping, setIsOnShopping] = useState(false);
     const movieCtx = useContext(MovieCtx);
 
