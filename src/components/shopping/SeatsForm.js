@@ -38,7 +38,7 @@ const SeatsForm = props => {
     const submitHandler = (event) => {
         event.preventDefault();
         const movieCtxIndex = movieCtx.findIndex(movie => movie.id === props.movieId);
-        movieCtx[movieCtxIndex].onSeatsBooked(selectedSeats.list);
+        movieCtx[movieCtxIndex].onSeatsBooked({action: 'BOOK_TICKETS', seats: selectedSeats.list});
         props.onCloseModal();
     }
 
@@ -50,19 +50,19 @@ const SeatsForm = props => {
                 <table>
                     <tbody>
                 <tr>    
-                    <td>C</td>
+                    <td key={'c'}>C</td>
                     {thirdRow.map(id => <td><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
                 </tr>
                 <tr>
-                    <td>B</td>
+                    <td key={'b'}>B</td>
                     {secondRow.map(id => <td><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
                 </tr>
                 <tr>
-                    <td>A</td>
+                    <td key={'a'}>A</td>
                     {firstRow.map(id => <td><Seat id={id} key={id} movieId={props.movieId} onCheck={selectHandler}/></td>)}
                 </tr>
                 <tr>
-                    <td></td>
+                    <td key={'empty'}></td>
                     {numberRows}
                 </tr>
                 </tbody>

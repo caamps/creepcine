@@ -13,10 +13,7 @@ const MovieShopping = props => {
     }
 
     return (
-        <Modal>
-            <div className={classes.header}>
-                <CloseButton onClick={closeModalHandler}/>
-            </div>
+        <Modal onClose={closeModalHandler}>
             <div className={classes.grid}>
                 <div className={classes['left-div']}>
                     <img src={movie.image} className={classes.poster}/>

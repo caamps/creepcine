@@ -1,0 +1,40 @@
+.movie {
+    background-color: #292929;
+    height: 8rem;
+    border-radius: 25px;
+    display: flex;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.left-div{
+    display: flex;
+}
+
+.right-div{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.movie img{
+    width: 5.5rem;
+    margin-right: 1rem;
+}
+
+.movie-text{
+    display: grid;
+}
+
+.movie:hover{
+    background-color: black;
+}
+
+  @media (max-width: 768px) {
+    .movie h2{
+        font-size: 1rem;
+    }
+  }

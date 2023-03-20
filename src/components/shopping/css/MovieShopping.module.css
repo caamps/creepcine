@@ -24,11 +24,6 @@
     width: 80%;
 }
 
-.header {
-    display: flex;
-    justify-content: end;
-}
-
 @media (max-width: 800px) {
     .grid{
         display: table-row;

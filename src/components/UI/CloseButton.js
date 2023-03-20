@@ -4,7 +4,7 @@ import close from '../../assets/close.svg';
 const CloseButton = props => {
     return (
         <>
-        <button onClick={props.onClick} id='btn' className={classes['close-button']}>
+        <button onClick={props.onClick} id='btn' className={`${classes['close-button']} ${props.className}`}>
             <img src={close} className={classes['close-img']} alt='close button'/>  
         </button>
         </>
