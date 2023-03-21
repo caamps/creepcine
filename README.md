@@ -14,7 +14,7 @@ O CreepCine é uma interface de compra de ingressos para cinemas criado em React
 <td width="50%">
 <br>
 <p align="center">
-  Página do anúncio
+  Página de compra de ingressos
 </p>
 <img src="https://user-images.githubusercontent.com/121815039/226645325-7a77f8a7-c26d-4539-8cff-17aaeba18ef6.png">  
 </td>
