@@ -48,7 +48,7 @@ npm install
 --> Para iniciar o app, execute:
 
 ```bash
-nom start
+npm start
 ```
 
 
