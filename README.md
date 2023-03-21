@@ -1,5 +1,5 @@
 # CreepCine
-O CreepCine é uma interface de compra de ingressos para cinemas criado em React.js 
+O CreepCine é uma interface de compra de ingressos para cinemas criada em React.js 
 ### Preview
 <table width="100%"> 
 <tr>
